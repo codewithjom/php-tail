@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ..
 yarn init -y
 yarn add -D tailwindcss
 yarn tailwindcss init
