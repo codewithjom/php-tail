@@ -1,0 +1,12 @@
+#!/bin/bash
+
+yarn init -y
+yarn add -D tailwindcss
+yarn tailwindcss init
+cp files/tailwind.config.js .
+mkdir src
+cp files/input.css src/
+sed -i '2i"scripts": {\
+  "dev": "yarn tailwindcss -i ./src/input.css -o ./src/output.css --watch"\
+},' package.json
+echo "DO NOT FORGET TO ADD output.css IN YOUR PHP FILE!"
