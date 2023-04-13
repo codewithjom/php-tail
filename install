@@ -1,14 +1,14 @@
 #!/bin/bash
 
 cd ..
-yarn init -y
-yarn add -D tailwindcss
-yarn tailwindcss init
+npm init -y
+npm install -D tailwindcss
+npx tailwindcss init
 cp php-tail/files/tailwind.config.js .
 mkdir src
 cp php-tail/files/input.css src/
 sed -i '2i"scripts": {\
-  "dev": "yarn tailwindcss -i ./src/input.css -o ./src/output.css --watch"\
+  "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"\
 },' package.json
 rm -rf php-tail
 echo "DO NOT FORGET TO ADD output.css IN YOUR PHP FILE!"
